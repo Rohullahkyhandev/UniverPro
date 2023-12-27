@@ -5,13 +5,21 @@
     <div class="w-full mt-4 mb-6">
         <div class="bg-white  shadow py-4 px-4">
             <div id="success_msg">
-
+                @include('flashMessages.success_message')
             </div>
             <div class="flex items-center justify-between border-b-2 py-3">
 
-                <div>
-                    <a href="#" class="bg-blue-600 text-white py-3 px-2 rounded focus:ring-blue-400 focus:ring-4">ثبت
-                        مکتوب جدید</a>
+                <div class="flex items-center justify-between ">
+                    <a href="#"
+                        class="bg-blue-600 flex items-center justify-between text-white py-3 px-2 rounded focus:ring-blue-400 focus:ring-4">ثبت
+                        مکتوب جدید
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                        </svg>
+
+                    </a>
+
                 </div>
                 <div>
                     <h1 class="text-3xl">لیست مکتوب ها</h1>
