@@ -36,10 +36,27 @@ return [
             'throw' => false,
         ],
 
+        // user photos
+        'users' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/users'),
+        ],
+
+        // pdc file and photos
+        'send_document' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/send_document'),
+        ],
+
+        'received_document' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/received_document'),
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],

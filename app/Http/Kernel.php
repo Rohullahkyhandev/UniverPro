@@ -40,7 +40,7 @@ class Kernel extends HttpKernel
 
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
-            \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
+            \Illuminate\Routing\Middleware\ThrottleRequests::class . ':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
     ];
@@ -54,6 +54,63 @@ class Kernel extends HttpKernel
      */
     protected $middlewareAliases = [
         'auth' => \App\Http\Middleware\Authenticate::class,
+
+        'admin' => \App\Http\Middleware\Admin::class,
+
+        // user
+        'view_user' =>  \App\Http\Middleware\user\user_view::class,
+        'create_user' =>  \App\Http\Middleware\user\user_create::class,
+        'edit_user' =>  \App\Http\Middleware\user\user_edit::class,
+        'delete_user' =>  \App\Http\Middleware\user\user_delete::class,
+
+
+        // pdc/document
+        'view_document' =>  \App\Http\Middleware\pdc\docments\document_view::class,
+        'create_document' =>  \App\Http\Middleware\pdc\docments\document_create::class,
+        'edit_document' =>  \App\Http\Middleware\pdc\docments\document_edit::class,
+        'delete_document' =>  \App\Http\Middleware\pdc\docments\document_delete::class,
+
+        // pdc/commit
+        'view_commita' =>  \App\Http\Middleware\pdc\commite\commite_view::class,
+        'create_commita' =>  \App\Http\Middleware\pdc\commite\commite_create::class,
+        'edit_commita' =>  \App\Http\Middleware\pdc\commite\commite_edit::class,
+        'delete_commita' =>  \App\Http\Middleware\pdc\commite\commite_delete::class,
+
+
+        // pdc/plan
+        'view_plan' =>  \App\Http\Middleware\pdc\plan\plan_view::class,
+        'create_plan' =>  \App\Http\Middleware\pdc\plan\plan_create::class,
+        'edit_plan' =>  \App\Http\Middleware\pdc\plan\plan_edit::class,
+        'delete_plan' =>  \App\Http\Middleware\pdc\plan\plan_delete::class,
+
+
+        // pdc/scholarship
+        'view_scholarship' =>  \App\Http\Middleware\pdc\scholaship\scholarship_view::class,
+        'create_scholarship' =>  \App\Http\Middleware\pdc\scholaship\scholarship_create::class,
+        'edit_scholarship' =>  \App\Http\Middleware\pdc\scholaship\scholarship_edit::class,
+        'delete_scholarship' =>  \App\Http\Middleware\pdc\scholaship\scholarship_delete::class,
+
+        //pdc/workshop
+        'view_workshop' =>  \App\Http\Middleware\pdc\workshop\workshop_view::class,
+        'create_workshop' =>  \App\Http\Middleware\pdc\workshop\workshop_create::class,
+        'edit_workshop' =>  \App\Http\Middleware\pdc\workshop\workshop_edit::class,
+        'delete_workshop' =>  \App\Http\Middleware\pdc\workshop\workshop_delete::class,
+
+
+        // teacher_department/teachers
+        'view_teacher' =>  \App\Http\Middleware\teacher_department\techaer\techaer_view::class,
+        'create_teacher' =>  \App\Http\Middleware\teacher_department\techaer\techaer_create::class,
+        'edit_teacher' =>  \App\Http\Middleware\teacher_department\techaer\techaer_edit::class,
+        'delete_teacher' =>  \App\Http\Middleware\teacher_department\techaer\techaer_delete::class,
+
+        //teacher_department/faculty
+        'view_faculty' =>  \App\Http\Middleware\teacher_department\faculty\faculty_view::class,
+        'create_faculty' =>  \App\Http\Middleware\teacher_department\faculty\faculty_create::class,
+        'edit_faculty' =>  \App\Http\Middleware\teacher_department\faculty\faculty_edit::class,
+        'delete_faculty' =>  \App\Http\Middleware\teacher_department\faculty\faculty_delete::class,
+
+
+
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
